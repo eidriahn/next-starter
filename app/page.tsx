@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HydratedExampleQuery } from "../components/ExampleQuery/HydratedExampleQuery";
+import { ExampleQuery } from "../components/ExampleQuery/ExampleQuery";
 
 export const AppPage = () => {
   return (
@@ -10,7 +10,7 @@ export const AppPage = () => {
       <Link className="underline" href="/account">
         account
       </Link>
-      <HydratedExampleQuery />
+      <ExampleQuery />
     </div>
   );
 };

@@ -2,14 +2,14 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { testRequest } from "../../helpers/requests/testRequest";
-import { type FC } from "react";
 
-interface ExampleQueryProps {
-  queryKey: string[];
-}
-
-export const ExampleQuery: FC<ExampleQueryProps> = ({ queryKey }) => {
-  const { data } = useQuery({ queryKey, queryFn: testRequest });
+export const ExampleQuery = () => {
+  const { data, isLoading } = useQuery({
+    queryKey: ["example"],
+    queryFn: testRequest,
+  });
+  console.log(`🚀 => isLoading:`, isLoading);
+  console.log(`🚀 => data:`, data);
 
   return <>{data?.queryData}</>;
 };
